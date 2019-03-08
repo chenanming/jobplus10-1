@@ -1,10 +1,7 @@
 from flask import Blueprint, render_template, request, current_app, redirect, url_for, flash
 from jobplus.decorators import admin_required
 from jobplus.models import User, db
-<<<<<<< HEAD
-=======
 from jobplus.forms import RegisterForm, UserEditForm, CompanyEditForm
->>>>>>> origin/master
 
 admin = Blueprint('admin', __name__, url_prefix='/admin')
 
@@ -22,8 +19,6 @@ def users():
             per_page=current_app.config['ADMIN_PER_PAGE'],
             error_out=False
     )
-<<<<<<< HEAD
-=======
     return render_template('admin/users.html', pagination=pagination)
 
 
@@ -78,6 +73,4 @@ def disable_user(user_id):
     db.session.add(user)
     db.session.commit()
     return redirect(url_for('admin.users'))
->>>>>>> origin/master
-
 
